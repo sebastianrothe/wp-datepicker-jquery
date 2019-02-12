@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "qunit tests/test.js",
+    "test": "parcel public/test.html",
+    "qunit": "qunit tests/test.js",
     "start": "parcel public/index.html"
   },
   "repository": {
