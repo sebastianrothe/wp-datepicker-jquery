@@ -1,0 +1,26 @@
+{
+  "name": "datepicker-jquery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "qunit tests/test.js",
+    "start": "parcel public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastianrothe/wp-datepicker-jquery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastianrothe/wp-datepicker-jquery/issues"
+  },
+  "homepage": "https://github.com/sebastianrothe/wp-datepicker-jquery#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0",
+    "qunit": "^2.9.1",
+    "qunit-migrate": "^2.0.2",
+    "serve": "^10.1.2"
+  }
+}
