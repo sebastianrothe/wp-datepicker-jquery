@@ -1,9 +1,7 @@
-(function (gruseltourApp) {
-    'use strict';
-
-	gruseltourApp.init = function (useDummyData) {
-	  	var dataProvider = gruseltourApp.dataProvider(useDummyData || false),
-	  		dateChecker = gruseltourApp.dateChecker(dataProvider);
+export default class App {
+	init(useDummyData) {
+	  	var dataProvider = dataProvider(useDummyData || false),
+	  		dateChecker = dateChecker(dataProvider);
 
 	  	// get the 1st inputfield
 	  	var $datepickerInjectionPoint = jQuery('#contact-form-66 input.text').eq(0);
@@ -25,11 +23,11 @@
 			element.addClass('readonly');
 			element.prop('readonly', true);
 		}($datepickerInjectionPoint));
-	};
+	}
 
 	// augment the jQuery Datepicker with a footer
-	gruseltourApp.renderFooterOnDatepicker = function () {
-		var htmlEntities = gruseltourApp.tourHTMLEntities();
+	renderFooterOnDatepicker() {
+		var htmlEntities = tourHTMLEntities();
 
 		jQuery.extend(jQuery.datepicker, {
 			_generateHTMLOriginal: jQuery.datepicker._generateHTML,
@@ -37,7 +35,7 @@
 			generateFooter: function (legendOptions) {
 				// TODO: refactor to support locale
 				var TEXT_LAST_REFRESHED = 'Updated: Today, at',
-                    TEXT_LAST_REFRESHED_TIME = gruseltourApp.util.toLocalTimeString(new Date());
+                    TEXT_LAST_REFRESHED_TIME = util.toLocalTimeString(new Date());
 
 				var html = '<div class="ui-datepicker-footer">';
 				var items = [];
@@ -71,17 +69,5 @@
 	    		return this._generateHTMLOriginal(inst) + footerHTML;
 			}
 		});
-	};
-// create global namespace and run it
-}(window.gruseltourApp = window.gruseltourApp || {}));
-
-// Only include at end of main application...
-jQuery(document).ready(function () {
-    'use strict';
-
-	// only set dummyData for testing
-	var testing = true;
-	window.gruseltourApp.init(testing);
-
-	window.gruseltourApp.renderFooterOnDatepicker();
-});
+	}
+}
