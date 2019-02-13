@@ -1,4 +1,5 @@
 import App from './components/app'
+import config from './config'
 
 // Only include at end of main application...
 function ready(fn) {
@@ -10,10 +11,7 @@ function ready(fn) {
 }
 
 ready(function() {
-	// only set dummyData for testing
-	var testing = true;
-
-	const app = new App()
-	app.init(testing);
+	const app = new App(config)
+	app.init();
 	app.renderFooterOnDatepicker();
 });
