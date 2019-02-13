@@ -7,7 +7,8 @@
     "test": "parcel public/test.html",
     "qunit": "qunit tests/test.js",
     "start": "parcel public/index.html",
-    "build": "parcel build src/**/*.* src/**/**/*.* --out-dir build --experimental-scope-hoisting"
+    "build": "parcel build src/**/*.* src/**/**/*.* --out-dir build --experimental-scope-hoisting",
+    "bundle": "parcel build public/bundle.html --out-dir bundle --experimental-scope-hoisting"
   },
   "repository": {
     "type": "git",
