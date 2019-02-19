@@ -5,7 +5,7 @@
 }
 
 .ui-datepicker table {
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-bottom: 1rem;
 }
 
@@ -17,15 +17,15 @@
 
 .ui-datepicker th {
   text-transform: uppercase;
-  color: #E3797D;
-  font-size: .8rem;
+  color: #e3797d;
+  font-size: 0.8rem;
   padding-bottom: 1rem;
 }
 
 .ui-datepicker .ui-datepicker-header {
   border: none;
   border-radius: 0;
-  background: #4ECDC4;
+  background: #4ecdc4;
   color: #fff;
   margin-bottom: 1rem;
 }
@@ -62,16 +62,16 @@
   right: 10px;
 }
 
+.ui-datepicker .ui-datepicker-next .ui-icon {
+  background-position: -32px -32px;
+}
+
 .ui-datepicker .ui-datepicker-prev .ui-icon {
   background-position: -96px -32px;
 }
 
 .ui-datepicker .ui-datepicker-prev:hover .ui-icon {
   background-position: -96px -48px;
-}
-
-.ui-datepicker .ui-datepicker-next .ui-icon {
-  background-position: -32px -32px;
 }
 
 .ui-datepicker .ui-datepicker-next:hover .ui-icon {
@@ -90,7 +90,7 @@
 
 .ui-datepicker .ui-datepicker-current-day .ui-state-default,
 .ui-datepicker .ui-state-hover {
-  background: #4ECDC4;
+  background: #4ecdc4;
   color: #fff;
 }
 
@@ -98,22 +98,22 @@
 .ui-datepicker .ui-datepicker-unselectable.ui-state-disabled.full {
   opacity: 1.0;
   filter: alpha(opacity=100);
-}*/
+} */
 
 .ui-datepicker .full .ui-state-default {
-  background: #E3797D;
+  background: #e3797d;
 }
 
 /*
 .ui-datepicker .not-available .ui-state-default {
   background: #fff;
-}*/
+} */
 
 .ui-datepicker .ui-priority-secondary,
 .ui-datepicker .ui-widget-content .ui-priority-secondary,
 .ui-datepicker .ui-widget-header .ui-priority-secondary {
-  opacity: .4;
-  filter: Alpha(Opacity=40);
+  opacity: 0.4;
+  filter: alpha(Opacity=40);
 }
 
 .ui-datepicker.readonly {
@@ -132,7 +132,7 @@
 
 .ui-datepicker .ui-datepicker-footer .legend li {
   float: left;
-  font-size: .7rem;
+  font-size: 0.7rem;
   width: 100px;
 }
 
@@ -141,13 +141,13 @@
   margin-right: 5px;
   height: 10px;
   width: 10px;
-  background: #4ECDC4;
+  background: #4ecdc4;
   position: relative;
   top: 2px;
 }
 
 .ui-datepicker .ui-datepicker-footer .legend .color.full {
-  background: #E3797D;
+  background: #e3797d;
 }
 
 .ui-datepicker .ui-datepicker-footer .legend .color.not-available {
@@ -155,7 +155,7 @@
 }
 
 .ui-datepicker .ui-datepicker-footer .lastRefreshDate {
-  font-size: .5rem;
-  margin: 1rem 0 .5rem;
+  font-size: 0.5rem;
+  margin: 1rem 0 0.5rem;
   padding-left: 16px;
 }
