@@ -1,17 +1,5 @@
 import { toGermanDateString } from '../locale/de-DE'
 
-const ready = fn => {
-  if (
-    document.attachEvent
-      ? document.readyState === 'complete'
-      : document.readyState !== 'loading'
-  ) {
-    fn()
-  } else {
-    document.addEventListener('DOMContentLoaded', fn)
-  }
-}
-
 const padZero = n => {
   return n < 10 ? '0' + n : n
 }
@@ -41,8 +29,8 @@ const stringToLocalDate = str => {
 }
 
 const cleanDisabledDateString = dirtyString => {
-  return jQuery
-    .trim(dirtyString)
+  return dirtyString
+    .trim()
     .replace(/ /g, '')
     .replace(/\r\n/g, '\n')
 }
@@ -53,4 +41,4 @@ const transformDateLinesToArray = lines => {
   return splittedCleanedLines.map(stringToLocalDate)
 }
 
-export { ready, padZero, transformDateLinesToArray }
+export { padZero, transformDateLinesToArray }
