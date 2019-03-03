@@ -4,6 +4,8 @@
     "prettier-standard"
   ],
   "env": {
-    "jquery": true
+    "jquery": true,
+    "jest": true,
+    "qunit": true
   }
 }

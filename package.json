@@ -4,11 +4,12 @@
   "description": "A Datepicker with JQuery UI with disabled dates and formatting",
   "main": "src/index.js",
   "scripts": {
-    "test": "parcel public/test.html",
-    "qunit": "qunit tests/test.js",
     "start": "parcel public/index.html",
+    "test": "jest --watch",
     "build": "parcel build src/js/**/*.* --out-dir build --experimental-scope-hoisting",
-    "bundle": "parcel build public/bundle.html --out-dir bundle --experimental-scope-hoisting"
+    "bundle": "parcel build public/bundle.html --out-dir bundle --experimental-scope-hoisting",
+    "test:qunit": "parcel public/test.html",
+    "qunit": "qunit tests/test.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.1",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^5.14.0",
     "eslint-config-prettier": "^4.0.0",
@@ -37,15 +39,19 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.1.0",
     "loglevel": "^1.6.1",
     "parcel-bundler": "^1.11.0",
     "prettier": "^1.16.4",
     "qunit": "^2.9.1",
     "qunit-migrate": "^2.0.2",
-    "serve": "^10.1.2",
     "stylefmt": "^6.0.3",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "jest": {
+    "verbose": true,
+    "rootDir": "src"
+  }
 }
