@@ -1,20 +1,22 @@
 {
   "env": {
+    "production": {
+      "plugins": [
+        [
+          "transform-remove-console",
+          {
+            "exclude": [
+              "error",
+              "warn"
+            ]
+          }
+        ]
+      ]
+    },
     "test": {
       "plugins": [
         "transform-es2015-modules-commonjs"
       ],
     },
   },
-  "plugins": [
-    [
-      "transform-remove-console",
-      {
-        "exclude": [
-          "error",
-          "warn"
-        ]
-      }
-    ]
-  ]
 }
