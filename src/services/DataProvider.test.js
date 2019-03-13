@@ -1,0 +1,49 @@
+import DataProvider from './DataProvider'
+import config from '../config'
+import { toGermanDateString } from '../locale/de-DE'
+
+describe('a dataprovider', () => {
+  beforeAll(() => {
+    expect(config.allowOnlyWeekends).toBeFalsy()
+  })
+
+  it('should be instantiated', () => {
+    const provider = new DataProvider()
+    expect(provider).toBeTruthy()
+  })
+
+  describe('when using test mode', () => {
+    beforeAll(() => {
+      expect(config.testing).toBeTruthy()
+    })
+
+    it('should return today in an array', () => {
+      const today = toGermanDateString(new Date())
+      const provider = new DataProvider()
+      const result = provider.useDummyData()
+      expect(result).toBeTruthy()
+      expect(result.length).toBe(1)
+
+      const [item] = result
+      expect(item).toBe(today)
+    })
+  })
+
+  describe('when using real mode', () => {
+    beforeAll(() => {
+      config.testing = false
+      expect(config.testing).toBeFalsy()
+    })
+
+    xit('should return fetch data', () => {
+      const today = new Date()
+      const provider = new DataProvider()
+      const result = provider.useDummyData()
+      expect(result).toBeTruthy()
+      expect(result.length).toBe(1)
+
+      const [item] = result
+      expect(item).toBe(today)
+    })
+  })
+})

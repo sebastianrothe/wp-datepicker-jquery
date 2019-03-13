@@ -1,5 +1,7 @@
 import config from '../config'
 import { transformDateLinesToArray } from '../helper'
+import { toGermanDateString } from '../locale/de-DE'
+import createRequest from './createRequest'
 
 export default class DataProvider {
   parseData(data) {
@@ -8,7 +10,7 @@ export default class DataProvider {
 
   // TODO: remove and mock this in a test
   useDummyData() {
-    const today = new Date().toLocaleDateString('de-DE')
+    const today = toGermanDateString(new Date())
     return transformDateLinesToArray(today)
   }
 
@@ -18,30 +20,7 @@ export default class DataProvider {
       return this.useDummyData()
     }
 
-    const request = this.createRequest()
+    const request = createRequest(config.dataApi, this.parseData)
     request.send()
-  }
-
-  createRequest() {
-    /* global XMLHttpRequest */
-    const request = new XMLHttpRequest()
-    request.open('GET', config.dataApi, true)
-
-    request.onload = () => {
-      if (request.status >= 200 && request.status < 400) {
-        const data = this.parseData(request.responseText)
-        console.info('finished loading data: ' + data)
-        return data
-        // TODO: use callback
-      } else {
-        console.error('Failed getting disabled dates. ', request.status)
-      }
-    }
-
-    request.onerror = () => {
-      console.error('Failed getting disabled dates. ', request.status)
-    }
-
-    return request
   }
 }
