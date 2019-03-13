@@ -41,4 +41,4 @@ const transformDateLinesToArray = lines => {
   return splittedCleanedLines.map(stringToLocalDate)
 }
 
-export { padZero, transformDateLinesToArray }
+export { padZero, transformDateLinesToArray, parseGermanDate }
