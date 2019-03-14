@@ -1,32 +1,36 @@
-/* import Util from '../services/util'
-import Provider from '../services/dataprovider'
-import Availability from '../services/availability' */
-
 import config from '../../config'
-import { extend } from '../../helper/polyfills'
+import { extend, addClass } from '../../helper/polyfills'
 import DataProvider from '../../services/DataProvider'
 import DateChecker from '../../services/DateChecker'
+import { toGermanTimeString } from '../../locale/de-DE'
+import i18n from '../../i18n'
 
 import './style.css'
+
 export default class App {
   init() {
     console.log(config.testing)
 
+    let dateChecker = new DateChecker()
     const dataProvider = new DataProvider()
-    const disabledDates = dataProvider.fetch()
-    const dateChecker = DateChecker(disabledDates)
+
+    const finishedLoadingDates = dates => {
+      dateChecker = new DateChecker(disabledDates)
+    }
+    const disabledDates = dataProvider.fetch(finishedLoadingDates)
 
     // get the 1st inputfield
-    const $datepickerInjectionPoint = jQuery('#contact-form-66 input.text').eq(
-      0
+    const [datepickerInjectionPoint] = document.querySelectorAll(
+      config.queryElement
     )
-    if (!$datepickerInjectionPoint.length) {
+
+    if (!datepickerInjectionPoint) {
       console.warn('Could not find injection point for the datepicker.')
       return
     }
 
     // inject the datepicker
-    $datepickerInjectionPoint.datepicker({
+    datepickerInjectionPoint.datepicker({
       // minDate: today
       minDate: 0,
       // is this day already fully booked ?
@@ -34,23 +38,19 @@ export default class App {
     })
 
     // set datepicker input field to readonly
-    const setReadonlyFlag = (function(element) {
-      element.addClass('readonly')
-      element.prop('readonly', true)
-    })($datepickerInjectionPoint)
+    addClass(datepickerInjectionPoint, 'readonly')
+    datepickerInjectionPoint.prop('readonly', true)
   }
 
   // augment the jQuery Datepicker with a footer
   renderFooterOnDatepicker() {
-    const htmlEntities = tourHTMLEntities()
+    const htmlEntities = config.tourHTMLEntities
 
     extend(jQuery.datepicker, {
       _generateHTMLOriginal: jQuery.datepicker._generateHTML,
 
-      generateFooter: function(legendOptions) {
-        // TODO: refactor to support locale
-        const TEXT_LAST_REFRESHED = 'Updated: Today, at'
-        const lastRefreshedTime = util.toLocalTimeString(new Date())
+      generateFooter: legendOptions => {
+        const lastRefreshedTime = toGermanTimeString(new Date())
 
         let html = '<div class="ui-datepicker-footer">'
         const items = []
@@ -78,11 +78,13 @@ export default class App {
           )}</ul><hr class="clear" />`
         }
 
-        html += `<div class="lastRefreshDate">${TEXT_LAST_REFRESHED} ${lastRefreshedTime}</div></div>`
+        html += `<div class="lastRefreshDate">${
+          i18n.strings.TEXT_LAST_REFRESHED
+        } ${lastRefreshedTime}</div></div>`
         return html
       },
 
-      _generateHTML: function(inst) {
+      _generateHTML: inst => {
         const legendOptions = []
         legendOptions.push(htmlEntities.disabled)
 

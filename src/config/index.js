@@ -20,6 +20,7 @@ export default {
   testing: true,
   allowOnlyWeekends: false,
   dataApi:
-    'hauntedleipzig.de/wordpress/wp-content/themes/hauntedleipzig/js/data.txt',
-  tourHTMLEntities: tourHTMLEntities
+    '//hauntedleipzig.de/wordpress/wp-content/themes/hauntedleipzig/js/data.txt',
+  tourHTMLEntities: tourHTMLEntities,
+  queryElement: '#contact-form-66 input.text'
 }

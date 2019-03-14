@@ -25,4 +25,9 @@ const extend = out => {
   return out
 }
 
-export { ready, extend }
+const addClass = (el, className) => {
+  if (el.classList) el.classList.add(className)
+  else el.className += ' ' + className
+}
+
+export { ready, extend, addClass }
