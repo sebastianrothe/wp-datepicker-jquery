@@ -35,15 +35,17 @@ describe('a dataprovider', () => {
       expect(config.testing).toBeFalsy()
     })
 
-    xit('should return fetch data', () => {
-      const today = new Date()
-      const provider = new DataProvider()
-      const result = provider.useDummyData()
-      expect(result).toBeTruthy()
-      expect(result.length).toBe(1)
+    it('should return fetch data', done => {
+      const callback = data => {
+        expect(data).toBeTruthy()
+        expect(data.length).toBeGreaterThanOrEqual(1)
 
-      const [item] = result
-      expect(item).toBe(today)
+        const [item] = data
+        expect(item.length).toBeGreaterThanOrEqual(8)
+        done()
+      }
+      const provider = new DataProvider()
+      provider.fetch(callback)
     })
   })
 })

@@ -14,13 +14,15 @@ export default class DataProvider {
     return transformDateLinesToArray(today)
   }
 
-  fetch() {
+  fetch(callback) {
     if (config.testing) {
       console.info('Running in TEST mode.')
       return this.useDummyData()
     }
 
-    const request = createRequest(config.dataApi, this.parseData)
+    const request = createRequest(config.dataApi, data =>
+      callback(this.parseData(data))
+    )
     request.send()
   }
 }
