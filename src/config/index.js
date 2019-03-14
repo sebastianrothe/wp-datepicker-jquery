@@ -17,7 +17,6 @@ export default {
   locale: 'de',
   timeFormatString: '',
   classNameForInjection: '',
-  testing: true,
   allowOnlyWeekends: false,
   dataApi:
     '//hauntedleipzig.de/wordpress/wp-content/themes/hauntedleipzig/js/data.txt',

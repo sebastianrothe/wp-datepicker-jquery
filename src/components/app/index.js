@@ -11,12 +11,10 @@ export default class App {
   }
 
   init() {
-    console.log(config.testing)
-    const dataProvider = new DataProvider()
-
     const finishedLoadingDates = dates => {
       this.dateChecker.setDisabledDates(disabledDates)
     }
+    const dataProvider = new DataProvider()
     const disabledDates = dataProvider.fetch(finishedLoadingDates)
   }
 
