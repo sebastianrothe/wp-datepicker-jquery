@@ -121,4 +121,9 @@ const enableFooter = () => {
   })
 }
 
-export { setRegionToGerman, enableDatepicker, setReadonly, enableFooter }
+export default function datepicker(firstInput, dateChecker) {
+  setRegionToGerman()
+  enableFooter()
+  enableDatepicker(firstInput, dateChecker)
+  setReadonly(firstInput)
+}

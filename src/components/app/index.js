@@ -1,11 +1,7 @@
 import config from '../../config'
 import DataProvider from '../../services/DataProvider'
 import DateChecker from '../../services/DateChecker'
-import {
-  enableDatepicker,
-  setReadonly,
-  setRegionToGerman
-} from '../datepicker/jquery'
+import datepicker from '../datepicker/jquery'
 
 import './style.css'
 
@@ -32,8 +28,6 @@ export default class App {
       return
     }
 
-    setRegionToGerman()
-    enableDatepicker(firstInput, this.dateChecker)
-    setReadonly(firstInput)
+    datepicker(firstInput, this.dateChecker)
   }
 }
