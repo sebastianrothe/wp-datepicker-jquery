@@ -1,5 +1,6 @@
 import createRequest from './createRequest'
 
+/* global XMLHttpRequest */
 describe('a request', () => {
   it('should be instantiated', () => {
     const request = createRequest()
@@ -7,19 +8,18 @@ describe('a request', () => {
   })
 
   it('should use a http request', done => {
-    /* global XMLHttpRequest */
     const request = new XMLHttpRequest()
     request.open('GET', 'http://hauntedleipzig.de', true)
     request.onload = () => {
-      console.log(123)
       done()
     }
     request.send()
   })
 
-  xit('should fetch data', async () => {
+  it('should fetch data', done => {
     const callback = data => {
       console.log(data)
+      done()
     }
 
     const request = createRequest(

@@ -52,6 +52,7 @@
   "dependencies": {},
   "jest": {
     "verbose": true,
-    "rootDir": "src"
+    "rootDir": "src",
+    "testURL": "http://hauntedleipzig.de"
   }
 }
