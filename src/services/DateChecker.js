@@ -9,6 +9,10 @@ export default class DateChecker {
     this.convertToLocal = convertToLocal || false
   }
 
+  setDisablesDates(disabledDates) {
+    this.disabledDates = disabledDates
+  }
+
   isAvailable(date) {
     if (config.allowOnlyWeekends && isNotWeekend(date)) {
       return [false, this.noRegularTour.style, this.noRegularTour.tooltip]
