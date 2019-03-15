@@ -8,12 +8,12 @@ export default function createRequest(api, callback) {
       console.info('finished loading data: ' + request.responseText)
       callback(request.responseText)
     } else {
-      console.error('Failed getting disabled dates. ', request.status)
+      console.warn('Failed getting disabled dates. ', request.status)
     }
   }
 
   request.onerror = () => {
-    console.error('Failed getting disabled dates. ', request.status)
+    console.warn('Failed getting disabled dates. ', request.status)
   }
 
   return request
