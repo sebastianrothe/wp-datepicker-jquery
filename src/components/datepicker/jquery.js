@@ -59,8 +59,13 @@ const setRegionToGerman = () => {
 }
 
 const enableDatepicker = (element, dateChecker) => {
+  const $element = jQuery(element)
+  if (!$element) {
+    console.warn('Could not get jQuery object from element')
+    return
+  }
   // inject the datepicker
-  element.datepicker({
+  $element.datepicker({
     // minDate: today
     minDate: 0,
     // is this day already fully booked ?
@@ -70,7 +75,7 @@ const enableDatepicker = (element, dateChecker) => {
 
 const setReadonly = element => {
   addClass(element, 'readonly')
-  element.prop('readonly', true)
+  element.setAttribute('readonly', true)
 }
 
 const enableFooter = () => {
