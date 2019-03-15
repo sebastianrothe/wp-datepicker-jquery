@@ -7,21 +7,22 @@ export default class DateChecker {
     this.noRegularTour = config.tourHTMLEntities.noRegularTour
     this.disabledTour = config.tourHTMLEntities.disabled
     this.convertToLocal = convertToLocal || false
+    this.isAvailable = date => isAvailable(date, this)
   }
 
   setDisabledDates(disabledDates) {
     this.disabledDates = disabledDates
   }
+}
 
-  isAvailable(date) {
-    if (config.allowOnlyWeekends && isNotWeekend(date)) {
-      return [false, this.noRegularTour.style, this.noRegularTour.tooltip]
-    }
-
-    if (isDisabled(date, this.disabledDates, this.convertToLocal)) {
-      return [false, this.disabledTour.style, this.disabledTour.tooltip]
-    }
-
-    return [true]
+const isAvailable = (date, instance) => {
+  if (config.allowOnlyWeekends && isNotWeekend(date)) {
+    return [false, instance.noRegularTour.style, instance.noRegularTour.tooltip]
   }
+
+  if (isDisabled(date, instance.disabledDates, instance.convertToLocal)) {
+    return [false, instance.disabledTour.style, instance.disabledTour.tooltip]
+  }
+
+  return [true]
 }
