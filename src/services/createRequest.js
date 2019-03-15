@@ -5,7 +5,6 @@ export default function createRequest(api, callback) {
 
   request.onload = () => {
     if (request.status >= 200 && request.status < 400) {
-      console.info('finished loading data: ' + request.responseText)
       callback(request.responseText)
     } else {
       console.warn('Failed getting disabled dates. ', request.status)
