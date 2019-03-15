@@ -1,7 +1,8 @@
 import config from '../../config'
-import { extend, addClass } from '../../helper/polyfills'
+import { addClass } from '../../helper/polyfills'
 import { toGermanTimeString } from '../../locale/de-DE'
 import i18n from '../../i18n'
+import tourEntities from '../tour/entities'
 
 const setRegionToGerman = () => {
   jQuery.datepicker.regional['de'] = {
@@ -49,7 +50,7 @@ const setRegionToGerman = () => {
     dayNamesShort: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
     dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
     weekHeader: 'KW',
-    dateFormat: 'dd.mm.yy',
+    dateFormat: config.timeFormatString,
     firstDay: 1,
     isRTL: false,
     showMonthAfterYear: false,
@@ -80,8 +81,6 @@ const setReadonly = element => {
 }
 
 const enableFooter = () => {
-  const htmlEntities = config.tourHTMLEntities
-
   Object.assign(jQuery.datepicker, {
     _generateHTMLOriginal: jQuery.datepicker._generateHTML,
 
@@ -119,7 +118,7 @@ const enableFooter = () => {
 
     _generateHTML: function(inst) {
       const legendOptions = []
-      legendOptions.push(htmlEntities.disabled)
+      legendOptions.push(tourEntities.disabled)
 
       const footerHTML = this.generateFooter(legendOptions)
       return this._generateHTMLOriginal(inst) + footerHTML
