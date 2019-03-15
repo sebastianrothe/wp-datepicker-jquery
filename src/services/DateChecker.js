@@ -9,7 +9,7 @@ export default class DateChecker {
     this.convertToLocal = convertToLocal || false
   }
 
-  setDisablesDates(disabledDates) {
+  setDisabledDates(disabledDates) {
     this.disabledDates = disabledDates
   }
 
