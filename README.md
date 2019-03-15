@@ -6,3 +6,4 @@ A Datepicker for Wordpress with JQuery UI
 - remove jquery migrate
 - use custom jquery-ui
 - style datepicker
+- add noscript
