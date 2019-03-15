@@ -16,8 +16,10 @@ export default class DataProvider {
   }
 
   fetch(callback) {
-    const api = !config.development ? config.dataApi : config.dataApiDev
+    const api = !isDevelopment ? config.dataApi : config.dataApiDev
     const request = createRequest(api, data => callback(this.parseData(data)))
     request.send()
   }
 }
+
+const isDevelopment = process.env.NODE_ENV === 'DEVELOPMENT'

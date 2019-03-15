@@ -2,7 +2,6 @@ export default {
   locale: 'de',
   timeFormatString: 'dd.mm.yy',
   allowOnlyWeekends: false,
-  development: true,
   dataApi:
     '//hauntedleipzig.de/wordpress/wp-content/themes/hauntedleipzig/js/data.txt',
   dataApiDev: 'data/data.txt',
