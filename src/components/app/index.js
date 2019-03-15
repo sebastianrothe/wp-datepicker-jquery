@@ -7,15 +7,16 @@ import './style.css'
 
 export default class App {
   constructor() {
-    this.dateChecker = new DateChecker()
+    this.dateChecker = new DateChecker([], true)
   }
 
   init() {
     const finishedLoadingDates = dates => {
-      this.dateChecker.setDisabledDates(disabledDates)
+      console.info('finished loading data: ' + dates)
+      this.dateChecker.setDisabledDates(dates)
     }
     const dataProvider = new DataProvider()
-    const disabledDates = dataProvider.fetch(finishedLoadingDates)
+    dataProvider.fetch(finishedLoadingDates)
   }
 
   render() {
