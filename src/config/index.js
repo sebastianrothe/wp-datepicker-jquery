@@ -18,8 +18,10 @@ export default {
   timeFormatString: '',
   classNameForInjection: '',
   allowOnlyWeekends: false,
+  development: true,
   dataApi:
     '//hauntedleipzig.de/wordpress/wp-content/themes/hauntedleipzig/js/data.txt',
+  dataApiDev: 'data/data.txt',
   tourHTMLEntities: tourHTMLEntities,
   queryElement: '#contact-form-66 input.text'
 }

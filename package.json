@@ -1,10 +1,10 @@
 {
   "name": "datepicker-jquery",
   "version": "1.0.0",
-  "description": "A Datepicker with JQuery UI with disabled dates and formatting",
+  "description": "A Datepicker in JQuery UI with disabled dates and formatting",
   "main": "src/index.js",
   "scripts": {
-    "start": "parcel public/index.html",
+    "start": "parcel public/index.html public/data/data.txt",
     "test": "jest --watch",
     "build": "parcel build src/js/**/*.* --out-dir build --experimental-scope-hoisting",
     "bundle": "parcel build public/bundle.html --out-dir bundle --experimental-scope-hoisting",
