@@ -64,6 +64,7 @@ const enableDatepicker = (element, dateChecker) => {
     console.warn('Could not get jQuery object from element')
     return
   }
+
   // inject the datepicker
   $element.datepicker({
     // minDate: today
@@ -81,7 +82,7 @@ const setReadonly = element => {
 const enableFooter = () => {
   const htmlEntities = config.tourHTMLEntities
 
-  extend(jQuery.datepicker, {
+  Object.assign(jQuery.datepicker, {
     _generateHTMLOriginal: jQuery.datepicker._generateHTML,
 
     generateFooter: legendOptions => {
@@ -116,7 +117,7 @@ const enableFooter = () => {
       return html
     },
 
-    _generateHTML: inst => {
+    _generateHTML: function(inst) {
       const legendOptions = []
       legendOptions.push(htmlEntities.disabled)
 
@@ -126,9 +127,9 @@ const enableFooter = () => {
   })
 }
 
-export default function datepicker(firstInput, dateChecker) {
+export default function datepicker(input, dateChecker) {
   setRegionToGerman()
   enableFooter()
-  enableDatepicker(firstInput, dateChecker)
-  setReadonly(firstInput)
+  enableDatepicker(input, dateChecker)
+  // setReadonly(firstInput)
 }
