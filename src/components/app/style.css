@@ -159,3 +159,13 @@
   margin: 1rem 0 0.5rem;
   padding-left: 16px;
 }
+
+.ui-datepicker .ui-datepicker-footer hr.clear {
+  clear: both;
+  background: none;
+  visibility: hidden;
+  width: 0 !important;
+  border: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+}
