@@ -2,8 +2,6 @@
 A Datepicker for Wordpress with JQuery UI
 
 ## TODO
-- use jquery slim
-- remove jquery migrate
-- use custom jquery-ui
-- style datepicker
+- use jquery slim - not possible with datepicker
+- use custom jquery-ui only with datepicker
 - add noscript
