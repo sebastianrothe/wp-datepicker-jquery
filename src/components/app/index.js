@@ -8,15 +8,21 @@ import './style.css'
 export default class App {
   constructor() {
     this.dateChecker = new DateChecker([], true)
+    this.dataProvider = new DataProvider()
+    this.handleOpen = () => this.fetchData()
   }
 
   init() {
+    this.fetchData()
+  }
+
+  fetchData() {
     const finishedLoadingDates = dates => {
       console.info('finished loading data: ' + dates)
       this.dateChecker.setDisabledDates(dates)
     }
-    const dataProvider = new DataProvider()
-    dataProvider.fetch(finishedLoadingDates)
+
+    this.dataProvider.fetch(finishedLoadingDates)
   }
 
   render() {
@@ -27,6 +33,6 @@ export default class App {
       return
     }
 
-    datepicker(firstInput, this.dateChecker)
+    datepicker(firstInput, this.dateChecker, this.handleOpen)
   }
 }

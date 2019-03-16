@@ -59,7 +59,7 @@ const setRegionToGerman = () => {
   jQuery.datepicker.setDefaults(jQuery.datepicker.regional['de'])
 }
 
-const enableDatepicker = (element, dateChecker) => {
+const enableDatepicker = (element, dateChecker, handleOpen) => {
   const $element = jQuery(element)
   if (!$element) {
     console.warn('Could not get jQuery object from element')
@@ -70,6 +70,7 @@ const enableDatepicker = (element, dateChecker) => {
   $element.datepicker({
     // minDate: today
     minDate: 0,
+    beforeShow: handleOpen,
     // is this day already fully booked ?
     beforeShowDay: dateChecker.isAvailable
   })
@@ -126,9 +127,9 @@ const enableFooter = () => {
   })
 }
 
-export default function datepicker(input, dateChecker) {
+export default function datepicker(input, dateChecker, handleOpen) {
   setRegionToGerman()
   enableFooter()
-  enableDatepicker(input, dateChecker)
+  enableDatepicker(input, dateChecker, handleOpen)
   // setReadonly(firstInput)
 }
