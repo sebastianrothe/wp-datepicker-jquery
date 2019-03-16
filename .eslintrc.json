@@ -1,0 +1,11 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "prettier-standard"
+  ],
+  "env": {
+    "jquery": true,
+    "jest": true,
+    "qunit": true
+  }
+}
