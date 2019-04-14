@@ -1,6 +1,6 @@
 #!/bin/sh
 VERSION=${1:MASTER}
-NAME=datepicker-jquery-plugin
+NAME=datepicker-jqueryui-plugin
 OUTPUT_PATH=dist
 
 mkdir -p $OUTPUT_PATH

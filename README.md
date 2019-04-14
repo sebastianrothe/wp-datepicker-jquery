@@ -1,4 +1,4 @@
-# wp-datepicker-jquery
+# wp-datepicker-jqueryui
 A Datepicker for Wordpress with JQuery UI
 
 ## TODO
