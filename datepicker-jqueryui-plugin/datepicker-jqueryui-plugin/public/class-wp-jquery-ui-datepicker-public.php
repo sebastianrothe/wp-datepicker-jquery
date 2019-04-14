@@ -73,7 +73,9 @@ class Wp_Jquery_Ui_Datepicker_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/datepicker-jqueryui-plugin-'.$this->version.'.css', array(), $this->version, 'all' );
+    wp_enqueue_style('jquery-ui-theme', 'https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.min.css', false, '1.12.1', 'all' );
+
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/datepicker-jqueryui-plugin-'.$this->version.'.css', array('jquery-ui-theme'), $this->version, 'all' );
 
 	}
 
@@ -96,7 +98,12 @@ class Wp_Jquery_Ui_Datepicker_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/datepicker-jqueryui-plugin-'.$this->version.'.js', array( 'jquery' ), $this->version, false );
+    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.4.0.min.js', false, '3.4.0', false );
+
+    wp_enqueue_script('jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js', ['jquery'], '3.4.0', false );
+
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/datepicker-jqueryui-plugin-'.$this->version.'.js', [
+    'jquery-ui'], $this->version, false );
 
 	}
 
