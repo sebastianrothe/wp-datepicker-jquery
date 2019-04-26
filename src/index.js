@@ -7,7 +7,7 @@ const addPolyfills = () => {
 
 addPolyfills()
 
-ready(function() {
+ready(() => {
   const app = new App()
   app.init()
   app.render()
