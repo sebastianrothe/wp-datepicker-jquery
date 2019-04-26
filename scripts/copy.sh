@@ -6,7 +6,7 @@ BUNDLE_PATH=bundle
 
 copyAndRename() {
   local filetype=$1
-  ls $BUNDLE_PATH/src.*.$filetype | sed "p;s%$BUNDLE_PATH/src\..*\.$filetype$%$OUTPUT_PATH/$filetype/$NAME-$VERSION\.$filetype%g" | xargs -n2 cp
+  ls -1 $BUNDLE_PATH/src.*.$filetype | sed "p;s%$BUNDLE_PATH/src\..*\.$filetype$%$OUTPUT_PATH/$filetype/$NAME-$VERSION\.$filetype%g" | xargs -n2 cp
 }
 
 main() {
