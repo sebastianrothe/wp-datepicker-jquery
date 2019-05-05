@@ -106,7 +106,7 @@ class Wp_Jquery_Ui_Datepicker_Public {
       return;
     }
 
-    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.4.0.min.js', false, null, true );
+    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.4.1.min.js', false, null, true );
 
     wp_enqueue_script('jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js', ['jquery'], null, true );
 
