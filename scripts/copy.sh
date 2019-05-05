@@ -1,7 +1,7 @@
 #!/bin/sh
 VERSION=${1:-develop}
 NAME=datepicker-jqueryui-plugin
-OUTPUT_PATH="$NAME/$NAME/public"
+OUTPUT_PATH="$NAME/public"
 BUNDLE_PATH=${2:-bundle}
 
 copyAndRename() {

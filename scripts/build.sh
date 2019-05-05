@@ -12,4 +12,4 @@ zip -r -9 $OUTPUT_PATH/$NAME-$VERSION.zip $NAME \
     -x */.git \
     -x */.svn \
     -x */.idea \
-    -X */__MACOSX
+    -x */__MACOSX
