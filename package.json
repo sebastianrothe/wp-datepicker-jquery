@@ -7,11 +7,11 @@
     "start": "parcel public/index.html public/data/data.txt",
     "test": "jest --watch",
     "clean": "rm -rf bundle/** && rm -rf build/** && rm -rf dist/**",
-    "copy": "./scripts/copy.sh $npm_package_version",
+    "copy": "./scripts/copy.sh $npm_package_version bundle/custom",
     "build": "parcel build src/**/*.* --out-dir build --experimental-scope-hoisting",
     "bundle": "parcel build public/bundle.html --out-dir bundle --no-content-hash --experimental-scope-hoisting",
-    "bundle:test": "parcel build public/bundle.test.html --out-dir bundle/test --no-content-hash --experimental-scope-hoisting",
-    "prepare": "run-s clean bundle copy",
+    "bundle:custom": "parcel build public/bundle.custom.html --out-dir bundle/custom --no-content-hash --experimental-scope-hoisting",
+    "prepare": "run-s clean bundle:custom copy",
     "postversion": "prepare"
   },
   "repository": {
