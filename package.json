@@ -57,6 +57,6 @@
   "jest": {
     "verbose": true,
     "rootDir": "src",
-    "testURL": "http://hauntedleipzig.de"
+    "testURL": "https://gruseltour-berlin.de"
   }
 }

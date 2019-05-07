@@ -1,4 +1,5 @@
 import createRequest from './createRequest'
+import config from '../config'
 
 /* global XMLHttpRequest */
 describe('a request', () => {
@@ -9,7 +10,7 @@ describe('a request', () => {
 
   it('should use a http request', done => {
     const request = new XMLHttpRequest()
-    request.open('GET', 'http://hauntedleipzig.de', true)
+    request.open('GET', 'https://gruseltour-berlin.de', true)
     request.onload = () => {
       done()
     }
@@ -22,10 +23,7 @@ describe('a request', () => {
       done()
     }
 
-    const request = createRequest(
-      'http://hauntedleipzig.de/wordpress/wp-content/themes/hauntedleipzig/js/data.txt',
-      callback
-    )
+    const request = createRequest(config.dataApi, callback)
     request.send()
   })
 })
