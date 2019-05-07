@@ -35,6 +35,10 @@
   padding-bottom: 1rem;
 }
 
+.ui-datepicker-calendar tbody tr {
+  border-bottom: 0;
+}
+
 .ui-datepicker .ui-datepicker-header {
   border: none;
   border-radius: 0;
