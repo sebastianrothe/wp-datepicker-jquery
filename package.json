@@ -13,7 +13,8 @@
     "bundle:custom": "parcel build public/bundle.custom.html --out-dir bundle/custom --no-content-hash --experimental-scope-hoisting",
     "prepare": "run-s clean bundle:custom copy",
     "postversion": "prepare",
-    "plugin": "./scripts/build.sh $npm_package_version"
+    "plugin": "./scripts/build.sh $npm_package_version",
+    "release": "run-s prepare plugin"
   },
   "repository": {
     "type": "git",
