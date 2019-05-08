@@ -39,7 +39,8 @@
   padding-bottom: 1rem;
 }
 
-.ui-datepicker-calendar tbody tr {
+.ui-datepicker-calendar tbody tr,
+.ui-datepicker-calendar thead tr {
   border-bottom: 0;
 }
 
