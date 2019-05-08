@@ -116,7 +116,7 @@ class Wp_Jquery_Ui_Datepicker_Public {
   }
 
   private function isOnPage() {
-    return is_page('test');
+    return is_front_page();
   }
 
 }
