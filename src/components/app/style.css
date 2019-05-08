@@ -17,6 +17,10 @@
   box-shadow: 0 10px 20px rgba(22, 22, 22, 0.7), 0 6px 6px rgba(22, 22, 22, 0.75);
 }
 
+.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all {
+  z-index: 10;
+}
+
 .ui-datepicker table {
   font-size: 0.75rem;
   margin-bottom: 1rem;
