@@ -6,5 +6,6 @@ A Datepicker for Wordpress with JQuery UI
 - - generate options file from wordpress plugin settings
 - add noscript
 - hide disabled dates before today
+- replace floats with flexbox
 
 - use jquery slim - not possible with datepicker
