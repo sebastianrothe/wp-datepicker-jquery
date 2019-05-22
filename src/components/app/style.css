@@ -131,11 +131,7 @@
   background: var(--color-soldout);
 }
 
-.ui-datepicker.readonly {
-  background: white;
-}
-
-.ui-datepicker.hasDatepicker {
+.ui-datepicker .hasDatepicker {
   cursor: pointer;
 }
 
