@@ -17,6 +17,10 @@
   box-shadow: 0 10px 20px rgba(22, 22, 22, 0.7), 0 6px 6px rgba(22, 22, 22, 0.75);
 }
 
+.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all {
+  z-index: 10;
+}
+
 .ui-datepicker table {
   font-size: 0.75rem;
   margin-bottom: 1rem;
@@ -33,6 +37,11 @@
   color: var(--color-secondary);
   font-size: 0.75rem;
   padding-bottom: 1rem;
+}
+
+.ui-datepicker-calendar tbody tr,
+.ui-datepicker-calendar thead tr {
+  border-bottom: 0;
 }
 
 .ui-datepicker .ui-datepicker-header {
@@ -122,11 +131,7 @@
   background: var(--color-soldout);
 }
 
-.ui-datepicker.readonly {
-  background: white;
-}
-
-.ui-datepicker.hasDatepicker {
+.ui-datepicker .hasDatepicker {
   cursor: pointer;
 }
 
@@ -149,7 +154,7 @@
   width: 10px;
   background: #4ecdc4;
   position: relative;
-  top: 2px;
+  top: 4px;
 }
 
 .ui-datepicker .ui-datepicker-footer .legend .color.full {

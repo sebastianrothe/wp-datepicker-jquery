@@ -131,5 +131,5 @@ export default function datepicker(input, dateChecker, handleOpen) {
   setRegionToGerman()
   enableFooter()
   enableDatepicker(input, dateChecker, handleOpen)
-  // setReadonly(firstInput)
+  setReadonly(input)
 }
