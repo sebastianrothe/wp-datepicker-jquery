@@ -4,7 +4,7 @@
   "description": "A Datepicker in JQuery UI with disabled dates and formatting",
   "main": "src/index.js",
   "scripts": {
-    "start": "parcel public/index.html public/data/data.txt",
+    "start": "parcel public/bundle.custom.html public/data/data.txt",
     "test": "jest --watch",
     "clean": "rm -rf bundle/** && rm -rf build/** && rm -rf dist/**",
     "copy": "./scripts/copy.sh $npm_package_version bundle/custom",
