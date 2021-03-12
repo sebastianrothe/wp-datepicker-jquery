@@ -4,33 +4,37 @@
   "description": "A Datepicker in JQuery UI with disabled dates and formatting",
   "main": "src/index.js",
   "scripts": {
-    "start": "serve public/bundle.custom.html public/data/data.txt",
+    "start": "snowpack dev",
     "test": "jest --watch",
     "clean": "rm -rf bundle/** && rm -rf build/** && rm -rf dist/**",
     "copy": "./scripts/copy.sh $npm_package_version bundle/custom",
-    "build": "parcel build src/**/*.* --out-dir build --experimental-scope-hoisting",
-    "bundle": "parcel build public/bundle.html --out-dir bundle --no-content-hash --experimental-scope-hoisting",
-    "bundle:custom": "parcel build public/bundle.custom.html --out-dir bundle/custom --no-content-hash --experimental-scope-hoisting",
-    "prepare": "run-s clean bundle:custom copy",
+    "build": "snowpack build",
+    "xprepare": "run-s clean build copy",
     "postversion": "run-s prepare",
     "plugin": "./scripts/build.sh $npm_package_version",
-    "release": "run-s prepare plugin"
+    "release": "run-s prepare plugin",
+    "browsers": "npx browserslist",
+    "browsers:update": "npx browserslist@latest --update-db",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "prettier --check \"src/**/*.js\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sebastianrothe/wp-datepicker-jquery.git"
   },
-  "author": "",
+  "author": "Sebastian Rothe",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sebastianrothe/wp-datepicker-jquery/issues"
   },
   "homepage": "https://github.com/sebastianrothe/wp-datepicker-jquery#readme",
   "devDependencies": {
+    "@snowpack/plugin-dotenv": "^2.0.5",
     "jest": "^26.6.3",
     "loglevel": "^1.7.1",
     "npm-run-all": "^4.1.5",
-    "serve": "^11.3.2"
+    "prettier": "^2.2.1",
+    "snowpack": "^3.0.13"
   },
   "jest": {
     "verbose": true,
