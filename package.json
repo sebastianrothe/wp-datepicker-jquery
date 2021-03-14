@@ -17,7 +17,8 @@
     "browsers": "npx browserslist",
     "browsers:update": "npx browserslist@latest --update-db",
     "format": "prettier --write \"src/**/*.js\"",
-    "lint": "prettier --check \"src/**/*.js\""
+    "lint": "eslint \"src/**/*.js\"",
+    "stylelint": "stylelint \"src/**/*.css\""
   },
   "repository": {
     "type": "git",
@@ -34,12 +35,21 @@
     "@snowpack/plugin-dotenv": "^2.0.5",
     "@snowpack/web-test-runner-plugin": "^0.2.1",
     "@web/test-runner": "^0.12.17",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
     "loglevel": "^1.7.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "sinon": "^9.2.4",
     "sinon-chai": "^3.5.0",
-    "snowpack": "^3.0.13"
+    "snowpack": "^3.0.13",
+    "stylelint": "^13.12.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^21.0.0"
   },
   "jest": {
     "verbose": true,
