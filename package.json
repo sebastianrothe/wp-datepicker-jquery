@@ -10,14 +10,18 @@
     "clean": "rm -rf build/** && rm -rf dist/**",
     "copy": "./scripts/copy.sh $npm_package_version build",
     "build": "snowpack build",
-    "prepare": "run-s clean build copy",
+    "release:prepare": "run-s clean build copy",
     "postversion": "run-s prepare",
     "plugin": "./scripts/build.sh $npm_package_version",
-    "release": "run-s prepare plugin",
+    "release": "run-s release:prepare plugin",
     "browsers": "npx browserslist",
     "browsers:update": "npx browserslist@latest --update-db",
-    "format": "prettier --write \"src/**/*.js\"",
-    "lint": "prettier --check \"src/**/*.js\""
+    "format": "prettier --write 'src/**/*.{js,html}'",
+    "format:ci": "prettier --list-different 'src/**/*.{js,html}'",
+    "lint": "eslint --cache --fix 'src/**/*.{js,html}'",
+    "lint:ci": "eslint 'src/**/*.{js,html}'",
+    "stylelint": "stylelint --cache --fix 'src/**/*.{css,pcss,html}'",
+    "stylelint:ci": "stylelint 'src/**/*.{css,pcss,html}'"
   },
   "repository": {
     "type": "git",
@@ -32,18 +36,29 @@
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4",
     "@snowpack/plugin-dotenv": "^2.0.5",
-    "@snowpack/web-test-runner-plugin": "^0.2.1",
+    "@snowpack/plugin-postcss": "^1.2.1",
+    "@snowpack/web-test-runner-plugin": "^0.2.2",
     "@web/test-runner": "^0.12.17",
-    "loglevel": "^1.7.1",
+    "cssnano": "^4.1.10",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-chai-expect": "^2.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-promise": "^4.3.1",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.2.1",
-    "sinon": "^9.2.4",
-    "sinon-chai": "^3.5.0",
-    "snowpack": "^3.0.13"
-  },
-  "jest": {
-    "verbose": true,
-    "rootDir": "src",
-    "testURL": "https://gruseltour-leipzig.de"
+    "sinon": "^10.0.0",
+    "sinon-chai": "^3.6.0",
+    "snowpack": "^3.1.2",
+    "snowpack-plugin-terser": "^0.1.0",
+    "stylelint": "^13.12.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-order": "^4.1.0",
+    "terser": "^5.6.1"
   }
 }
