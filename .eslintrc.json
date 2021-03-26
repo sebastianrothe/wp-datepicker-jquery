@@ -1,4 +1,11 @@
 {
+  "env": {
+    "jquery": true,
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es2017": true
+  },
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
@@ -6,13 +13,15 @@
       "impliedStrict": true
     }
   },
+  "plugins": ["promise", "chai-expect"],
+  // order of array is very important!
   "extends": [
-    "standard",
-    "prettier"
-  ],
-  "env": {
-    "jquery": true,
-    "browser": true,
-    "mocha": true
-  }
+      "eslint:recommended",
+      "standard",
+      "plugin:chai-expect/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:promise/recommended",
+      "prettier"
+  ]
 }
