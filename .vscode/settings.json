@@ -1,0 +1,14 @@
+{
+    // enable format and fix on save
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": false
+    },
+
+    // PRETTIER
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    // STYLELINT: disable built-in style validation
+    "css.validate": false,
+}
