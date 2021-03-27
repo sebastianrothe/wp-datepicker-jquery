@@ -7,12 +7,12 @@ export default function createRequest(api, callback) {
     if (request.status >= 200 && request.status < 400) {
       callback(request.responseText)
     } else {
-      console.warn('Failed getting disabled dates. ', request.status)
+      console.warn('Failed getting disabled dates.', request.status)
     }
   }
 
-  request.onerror = () => {
-    console.warn('Failed getting disabled dates. ', request.status)
+  request.onerror = (event) => {
+    console.warn('Error during request.', event)
   }
 
   return request

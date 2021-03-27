@@ -2,17 +2,17 @@
 VERSION=${1:-develop}
 NAME=datepicker-jqueryui-plugin
 OUTPUT_PATH="$NAME/public"
-BUNDLE_PATH=${2:-bundle}
+BUNDLE_PATH=${2:-build}
 
 copyAndRename() {
   local folder=$1
   local filetype=$2
 
-  # copy and rename src files
-  ls -1 $BUNDLE_PATH/src.*.$filetype | sed "p;s%$BUNDLE_PATH/src\..*\.$filetype$%$OUTPUT_PATH/$folder/$NAME-$VERSION\.$filetype%g" | xargs -n2 cp
+  # copy and rename compiled files
+  ls -1 $BUNDLE_PATH/dist/index.$filetype | sed "p;s%$BUNDLE_PATH/dist/\index\.$filetype$%$OUTPUT_PATH/$folder/$NAME-$VERSION\.$filetype%g" | xargs -n2 cp
 
   # copy and rename jquery-custom files
-  ls -1 $BUNDLE_PATH/jquery-ui.*.$filetype | sed "p;s%$BUNDLE_PATH/jquery-ui\..*\.$filetype$%$OUTPUT_PATH/$folder/jquery-ui-custom.min\.$filetype%g" | xargs -n2 cp
+  ls -1 $BUNDLE_PATH/js/jquery-ui-1.12.1.custom-smoothness/jquery-ui.*.$filetype | sed "p;s%$BUNDLE_PATH/js/jquery-ui-1.12.1.custom-smoothness/jquery-ui\..*\.$filetype$%$OUTPUT_PATH/$folder/jquery-ui-custom.min\.$filetype%g" | xargs -n2 cp
 }
 
 copyAndRenameWithCompression() {
@@ -20,8 +20,8 @@ copyAndRenameWithCompression() {
   local filetype=$1
 
   copyAndRename $folder $filetype
-  copyAndRename $folder "$filetype.br"
-  copyAndRename $folder "$filetype.gz"
+  #copyAndRename $folder "$filetype.br"
+  #copyAndRename $folder "$filetype.gz"
 }
 
 main() {
