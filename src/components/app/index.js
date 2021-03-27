@@ -1,6 +1,6 @@
 import config from '../../config'
-import DataProvider from '../../services/DataProvider'
-import DateChecker from '../../services/DateChecker'
+import DataProvider from '../../services/data-provider'
+import DateChecker from '../../services/date-checker'
 import datepicker from '../datepicker/jquery'
 
 import './style.css'
