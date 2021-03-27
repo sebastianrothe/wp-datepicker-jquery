@@ -2,7 +2,7 @@ import chai, { expect } from '@esm-bundle/chai'
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 
-import createRequest from './createRequest'
+import createRequest from './create-request'
 import config from '../config'
 
 chai.should()
