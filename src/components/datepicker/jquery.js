@@ -101,22 +101,23 @@ const enableFooter = () => {
           const legend = legendOptions[i]
 
           // class=color will always be assigned
-          const item = `<li>
-              <div class="color ${legend.style}"></div>
-              <span>${legend.title}</span>
-            </li>`
+          const item = `<li><div class="color ${legend.style}" /><div>${
+            legend.title
+          }
+            </div></li>`
           items.push(item)
         }
 
-        html += `<ul class="legend">${items.join('')}</ul>`
+        html += `<ul class="legend">${items.join('')}</ul><hr class="clear" />`
       }
 
-      html += `<div class="lastRefreshDate">${i18n.strings.TEXT_LAST_REFRESHED
-        } ${lastRefreshedTime}</div></div>`
+      html += `<div class="lastRefreshDate">${
+        i18n.strings.TEXT_LAST_REFRESHED
+      } ${lastRefreshedTime}</div></div>`
       return html
     },
 
-    _generateHTML: function (inst) {
+    _generateHTML: function(inst) {
       const legendOptions = []
       legendOptions.push(tourEntities.disabled)
 

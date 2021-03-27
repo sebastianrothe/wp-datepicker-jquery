@@ -139,21 +139,22 @@
 .ui-datepicker .ui-datepicker-footer .legend {
   list-style: none;
   padding: 0 0 5px 16px;
-  margin-bottom: 0px;
 }
 
 .ui-datepicker .ui-datepicker-footer .legend li {
+  float: left;
   font-size: 0.75rem;
   width: 100px;
-  display: flex;
-  align-items: center;
 }
 
 .ui-datepicker .ui-datepicker-footer .legend .color {
+  float: left;
   margin-right: 5px;
   height: 10px;
   width: 10px;
   background: #4ecdc4;
+  position: relative;
+  top: 4px;
 }
 
 .ui-datepicker .ui-datepicker-footer .legend .color.full {
@@ -167,6 +168,16 @@
 .ui-datepicker .ui-datepicker-footer .lastRefreshDate {
   font-size: 0.75rem;
   color: grey;
-  margin: .5rem 0 0.5rem;
+  margin: 1rem 0 0.5rem;
   padding-left: 16px;
+}
+
+.ui-datepicker .ui-datepicker-footer hr.clear {
+  clear: both;
+  background: none;
+  visibility: hidden;
+  width: 0 !important;
+  border: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
 }
