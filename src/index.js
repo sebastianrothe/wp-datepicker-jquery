@@ -1,5 +1,5 @@
-import App from './components/app'
-import { ready, objectAssign } from './helper/polyfills'
+import App from "./components/app"
+import { ready, objectAssign } from "./helper/polyfills"
 
 const addPolyfills = () => {
   objectAssign()
@@ -15,5 +15,5 @@ ready(() => {
 
 // Hot Module Replacement https://www.snowpack.dev/concepts/hot-module-replacement
 if (import.meta.hot) {
-  import.meta.hot.accept();
+  import.meta.hot.accept()
 }
