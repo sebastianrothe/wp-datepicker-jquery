@@ -2,7 +2,7 @@ import chai, { expect } from '@esm-bundle/chai'
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 
-import DataProvider from './DataProvider'
+import DataProvider from './data-provider'
 import config from '../config'
 import { toGermanDateString } from '../locale/de-DE'
 

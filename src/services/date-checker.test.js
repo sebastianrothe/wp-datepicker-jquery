@@ -1,6 +1,6 @@
 import { expect } from '@esm-bundle/chai'
 
-import DateChecker from './DateChecker'
+import DateChecker from './date-checker'
 import config from '../config'
 
 describe('a datechecker', () => {

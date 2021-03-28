@@ -1,7 +1,7 @@
 import config from '../config'
 import { transformDateLinesToArray } from '../helper'
 import { toGermanDateString } from '../locale/de-DE'
-import createRequest from './createRequest'
+import createRequest from './create-request'
 
 export default class DataProvider {
   parseData(data) {

@@ -5,7 +5,7 @@ import i18n from '../../i18n'
 import tourEntities from '../tour/entities'
 
 const setRegionToGerman = () => {
-  jQuery.datepicker.regional['de'] = {
+  jQuery.datepicker.regional.de = {
     closeText: 'Schließen',
     prevText: '&#x3C;Zurück',
     nextText: 'Vor&#x3E;',
@@ -56,7 +56,7 @@ const setRegionToGerman = () => {
     showMonthAfterYear: false,
     yearSuffix: ''
   }
-  jQuery.datepicker.setDefaults(jQuery.datepicker.regional['de'])
+  jQuery.datepicker.setDefaults(jQuery.datepicker.regional.de)
 }
 
 const enableDatepicker = (element, dateChecker, handleOpen) => {

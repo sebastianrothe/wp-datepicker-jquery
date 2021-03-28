@@ -4,17 +4,24 @@
     "browser": true,
     "node": true,
     "mocha": true,
-    "es2017": true
+    "es2020": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "impliedStrict": true
+    }
   },
   "plugins": ["promise", "chai-expect"],
   // order of array is very important!
   "extends": [
-      "eslint:recommended",
-      "standard",
-      "plugin:chai-expect/recommended",
-      "plugin:import/errors",
-      "plugin:import/warnings",
-      "plugin:promise/recommended",
-      "prettier"
+    "eslint:recommended",
+    "standard",
+    "plugin:chai-expect/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:promise/recommended",
+    "prettier"
   ]
 }

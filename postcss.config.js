@@ -1,14 +1,16 @@
-const cssnano = require("cssnano");
+const cssnano = require("cssnano")
 const presetEnv = require("postcss-preset-env")({
-    features: {
-        "nesting-rules": true,
-    },
-});
-const stylelint = require("stylelint");
+  features: {
+    "nesting-rules": true,
+  },
+})
+const stylelint = require("stylelint")
 
-const globalPlugins = [stylelint, presetEnv];
+const globalPlugins = [stylelint, presetEnv]
 
 const plugins =
-    process.env.NODE_ENV === "production" ? [...globalPlugins, cssnano] : globalPlugins;
+  process.env.NODE_ENV === "production"
+    ? [...globalPlugins, cssnano]
+    : globalPlugins
 
-module.exports = { plugins };
+module.exports = { plugins }

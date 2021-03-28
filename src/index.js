@@ -1,5 +1,5 @@
-import App from './components/app'
-import { ready, objectAssign } from './helper/polyfills'
+import App from "./components/app"
+import { ready, objectAssign } from "./helper/polyfills"
 
 const addPolyfills = () => {
   objectAssign()
@@ -13,9 +13,7 @@ ready(() => {
   app.render()
 })
 
-
-// Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
-// Learn more: https://www.snowpack.dev/concepts/hot-module-replacement
+// Hot Module Replacement https://www.snowpack.dev/concepts/hot-module-replacement
 if (import.meta.hot) {
-  import.meta.hot.accept();
+  import.meta.hot.accept()
 }
