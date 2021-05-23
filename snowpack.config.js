@@ -32,7 +32,7 @@ module.exports = {
   optimize: {
     entrypoints: ["src/index.js"],
     bundle: true,
-    minify: false,
+    minify: false, // minification is done by terser
     treeshake: true,
     target: ecmaVersion,
   },
