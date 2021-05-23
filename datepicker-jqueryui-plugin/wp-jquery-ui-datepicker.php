@@ -16,7 +16,7 @@
  * Plugin Name:       WP JQueryUI Datepicker
  * Plugin URI:        https://github.com/sebastianrothe
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Mysterium Tremendum GbR
  * Author URI:        https://gruseltour-leipzig.de
  * License:           GPL-2.0+
