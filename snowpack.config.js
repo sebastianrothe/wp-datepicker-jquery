@@ -1,6 +1,7 @@
 // Snowpack Configuration File
 // See all supported options: https://www.snowpack.dev/reference/configuration
 
+// see https://github.com/terser/terser#compress-options
 const ecmaVersion = "es2018"
 
 /** @type {import("snowpack").SnowpackUserConfig } */
