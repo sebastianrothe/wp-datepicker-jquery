@@ -1,15 +1,15 @@
-import chai, { expect } from '@esm-bundle/chai'
-import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
+import chai, { expect } from "@esm-bundle/chai"
+import sinon from "sinon"
+import sinonChai from "sinon-chai"
 
-import createRequest from './create-request'
-import config from '../config'
+import createRequest from "./create-request"
+import config from "../config"
 
 chai.should()
 chai.use(sinonChai)
 
-describe('a request', () => {
-  context('using XHR', () => {
+describe("a request", () => {
+  context("using XHR", () => {
     let requests = []
 
     before("mock xhr", () => {
@@ -27,12 +27,12 @@ describe('a request', () => {
       XMLHttpRequest.restore()
     })
 
-    it('should be instantiated', () => {
+    it("should be instantiated", () => {
       const request = createRequest()
       expect(request).to.be.ok
     })
 
-    it('should fetch mocked data', () => {
+    it("should fetch mocked data", () => {
       const callback = sinon.spy()
       const request = createRequest(config.dataApi, callback)
       request.send()
@@ -48,25 +48,30 @@ describe('a request', () => {
     })
   })
 
-  context('using fetch', () => {
-    it('should be instantiated', () => {
+  context("using fetch", () => {
+    it("should be instantiated", () => {
       expect(window.fetch).to.be.ok
       expect(fetch).to.be.ok
     })
 
-    it('should fail because of CORS', async () => {
-      await fetch("https://gruseltour-berlin.de/wordpress/wp-content/themes/gruseltour-berlin-eighteen/data/data.txt", {
-        mode: 'cors',
-        headers: {
-          "Access-Control-Allow-Origin": "*"
+    it("should fail because of CORS", async () => {
+      await fetch(
+        "https://gruseltour-berlin.de/wordpress/wp-content/themes/gruseltour-berlin-eighteen/data/data.txt",
+        {
+          mode: "cors",
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
         }
-      }).then((res) => {
-        console.log("response", res)
-        expect(false).to.be.ok
-      }).catch((error) => {
-        // expected failing, due to CORS
-        expect(true).to.be.ok
-      })
+      )
+        .then((res) => {
+          console.log("response", res)
+          expect(false).to.be.ok
+        })
+        .catch((error) => {
+          // expected failing, due to CORS
+          expect(true).to.be.ok
+        })
     })
   })
 })

@@ -1,9 +1,9 @@
-import config from '../../config'
-import DataProvider from '../../services/data-provider'
-import DateChecker from '../../services/date-checker'
-import datepicker from '../datepicker/jquery'
+import config from "../../config"
+import DataProvider from "../../services/data-provider"
+import DateChecker from "../../services/date-checker"
+import datepicker from "../datepicker/jquery"
 
-import './style.css'
+import "./style.css"
 
 export default class App {
   constructor() {
@@ -17,8 +17,8 @@ export default class App {
   }
 
   fetchData() {
-    const finishedLoadingDates = dates => {
-      console.info('finished loading data: ' + dates)
+    const finishedLoadingDates = (dates) => {
+      console.info("finished loading data: " + dates)
       this.dateChecker.setDisabledDates(dates)
     }
 
@@ -29,7 +29,7 @@ export default class App {
     const [firstInput] = document.querySelectorAll(config.queryElement)
 
     if (!firstInput) {
-      console.warn('Could not find injection point for the datepicker.')
+      console.warn("Could not find injection point for the datepicker.")
       return
     }
 

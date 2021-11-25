@@ -1,25 +1,25 @@
-const ready = fn => {
+const ready = (fn) => {
   if (
     document.attachEvent
-      ? document.readyState === 'complete'
-      : document.readyState !== 'loading'
+      ? document.readyState === "complete"
+      : document.readyState !== "loading"
   ) {
     fn()
   } else {
-    document.addEventListener('DOMContentLoaded', fn)
+    document.addEventListener("DOMContentLoaded", fn)
   }
 }
 
 const objectAssign = () => {
-  if (typeof Object.assign !== 'function') {
+  if (typeof Object.assign !== "function") {
     // Must be writable: true, enumerable: false, configurable: true
-    Object.defineProperty(Object, 'assign', {
+    Object.defineProperty(Object, "assign", {
       value: function assign(target, varArgs) {
         // .length of function is 2
-        'use strict'
+        "use strict"
         if (target == null) {
           // TypeError if undefined or null
-          throw new TypeError('Cannot convert undefined or null to object')
+          throw new TypeError("Cannot convert undefined or null to object")
         }
 
         const to = Object(target)
@@ -40,14 +40,14 @@ const objectAssign = () => {
         return to
       },
       writable: true,
-      configurable: true
+      configurable: true,
     })
   }
 }
 
 const addClass = (el, className) => {
   if (el.classList) el.classList.add(className)
-  else el.className += ' ' + className
+  else el.className += " " + className
 }
 
 export { ready, objectAssign, addClass }

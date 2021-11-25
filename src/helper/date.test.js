@@ -1,10 +1,10 @@
-import { expect } from '@esm-bundle/chai'
+import { expect } from "@esm-bundle/chai"
 
-import { isWeekend, isNotWeekend } from './date'
+import { isWeekend, isNotWeekend } from "./date"
 
-describe('DateHelper', () => {
-  describe('has functions for weekends', () => {
-    it('should return true, for weekends', () => {
+describe("DateHelper", () => {
+  describe("has functions for weekends", () => {
+    it("should return true, for weekends", () => {
       const saturday = new Date(2019, 2, 9)
       expect(saturday.getDay()).to.equal(6)
       expect(isWeekend(saturday)).to.be.ok
@@ -16,14 +16,14 @@ describe('DateHelper', () => {
       expect(isNotWeekend(sunday)).to.be.not.ok
     })
 
-    it('should return true, for fridays', () => {
+    it("should return true, for fridays", () => {
       const friday = new Date(2019, 2, 8)
       expect(friday.getDay()).to.equal(5)
       expect(isWeekend(friday)).to.be.ok
       expect(isNotWeekend(friday)).to.be.not.ok
     })
 
-    it('should return false, for weekdays', () => {
+    it("should return false, for weekdays", () => {
       const monday = new Date(2019, 2, 4)
       expect(monday.getDay()).to.equal(1)
       expect(isWeekend(monday)).to.be.not.ok
@@ -45,14 +45,14 @@ describe('DateHelper', () => {
       expect(isNotWeekend(thursday)).to.be.ok
     })
 
-    it('should return false for german strings', () => {
-      const friday = '08.03.2019'
+    it("should return false for german strings", () => {
+      const friday = "08.03.2019"
       expect(isWeekend(friday)).to.be.not.ok
       expect(isNotWeekend(friday)).to.be.ok
     })
 
-    it('should return true for english strings', () => {
-      const friday = new Date('2019-03-08')
+    it("should return true for english strings", () => {
+      const friday = new Date("2019-03-08")
       expect(friday.getDay()).to.equal(5)
       expect(isWeekend(friday)).to.be.ok
       expect(isNotWeekend(friday)).to.be.not.ok

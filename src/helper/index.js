@@ -1,15 +1,15 @@
-import { toGermanDateString } from '../locale/de-DE'
+import { toGermanDateString } from "../locale/de-DE"
 
-const padZero = n => {
-  return n < 10 ? '0' + n : n
+const padZero = (n) => {
+  return n < 10 ? "0" + n : n
 }
 
-const parseGermanDate = dateString => {
-  dateString = dateString || ''
+const parseGermanDate = (dateString) => {
+  dateString = dateString || ""
 
-  const createDate = parts => {
+  const createDate = (parts) => {
     if (!parts || parts.length < 2) {
-      console.log('Cannot parse the Date ' + parts)
+      console.log("Cannot parse the Date " + parts)
       return {}
     }
 
@@ -20,24 +20,21 @@ const parseGermanDate = dateString => {
     return new Date(year, month, day)
   }
 
-  return createDate(dateString.split('.'))
+  return createDate(dateString.split("."))
 }
 
-const stringToLocalDate = str => {
+const stringToLocalDate = (str) => {
   const germanDate = parseGermanDate(str)
   return toGermanDateString(germanDate)
 }
 
-const cleanDisabledDateString = dirtyString => {
-  return dirtyString
-    .trim()
-    .replace(/ /g, '')
-    .replace(/\r\n/g, '\n')
+const cleanDisabledDateString = (dirtyString) => {
+  return dirtyString.trim().replace(/ /g, "").replace(/\r\n/g, "\n")
 }
 
 // clean, split and parseToLocal
-const transformDateLinesToArray = lines => {
-  const splittedCleanedLines = cleanDisabledDateString(lines).split('\n')
+const transformDateLinesToArray = (lines) => {
+  const splittedCleanedLines = cleanDisabledDateString(lines).split("\n")
   return splittedCleanedLines.map(stringToLocalDate)
 }
 
