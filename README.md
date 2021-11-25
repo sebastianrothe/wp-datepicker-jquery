@@ -14,6 +14,8 @@ A Datepicker with support for disabling dates. Implemented with JQuery UI and su
 
 ## TODO
 
+- [ ] upgrade jqueryui
+- [ ] use swc instead of terser
 - [ ] replace jquery with lit-html/svelte
 - [ ] replace floats with flexbox
 - [ ] add noscript text
