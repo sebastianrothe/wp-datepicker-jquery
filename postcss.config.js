@@ -1,4 +1,5 @@
 const cssnano = require("cssnano")
+const reporter = require("postcss-fail-on-warn")
 const presetEnv = require("postcss-preset-env")({
   features: {
     "nesting-rules": true,
@@ -6,7 +7,7 @@ const presetEnv = require("postcss-preset-env")({
 })
 const stylelint = require("stylelint")
 
-const globalPlugins = [stylelint, presetEnv]
+const globalPlugins = [stylelint, presetEnv, reporter]
 
 const plugins =
   process.env.NODE_ENV === "production"

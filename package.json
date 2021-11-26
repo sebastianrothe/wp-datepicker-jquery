@@ -60,5 +60,8 @@
     "stylelint-config-standard": "^24.0.0",
     "stylelint-order": "^5.0.0",
     "terser": "^5.10.0"
+  },
+  "dependencies": {
+    "postcss-fail-on-warn": "^0.2.1"
   }
 }
