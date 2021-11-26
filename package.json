@@ -1,6 +1,6 @@
 {
   "name": "datepicker-jqueryui",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A Datepicker in JQuery UI with disabled dates and formatting",
   "main": "src/index.js",
   "repository": {
