@@ -14,9 +14,8 @@ A Datepicker with support for disabling dates. Implemented with JQuery UI and su
 
 ## TODO
 
-- [ ] upgrade jqueryui
-- [ ] use swc instead of terser
-- [ ] replace jquery with lit-html/svelte
+- [ ] use parcel instead of snowpack (supports swc, brotli)
+- [ ] replace jqueryui with lit-html/svelte/flatpickr
 - [ ] replace floats with flexbox
 - [ ] add noscript text
 - [ ] replace snowpack with vitejs
@@ -25,6 +24,7 @@ A Datepicker with support for disabling dates. Implemented with JQuery UI and su
 - [ ] hide disabled dates before today
 - [?] replace xhr with fetch - IE11 needs two Polyfills (fetch and Promises) then
 - [?] use jquery slim - not possible with datepicker
+- [x] upgrade jqueryui
 - [x] add linter
 - [x] add prettier
 - [x] add postcss
