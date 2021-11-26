@@ -1,7 +1,9 @@
 # Browsers that we support
 
 [production]
-defaults
+last 2 versions
+not dead
+> 0.2%
 IE 11
 
 [development]
