@@ -5,6 +5,7 @@ import i18n from "../../i18n"
 import tourEntities from "../tour/entities"
 
 const setRegionToGerman = () => {
+  // from https://raw.githubusercontent.com/jquery/jquery-ui/main/ui/i18n/datepicker-de.js
   jQuery.datepicker.regional.de = {
     closeText: "Schließen",
     prevText: "&#x3C;Zurück",
