@@ -2,7 +2,6 @@
   "name": "datepicker-jqueryui",
   "version": "1.2.0",
   "description": "A Datepicker in JQuery UI with disabled dates and formatting",
-  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sebastianrothe/wp-datepicker-jquery.git"
@@ -13,13 +12,14 @@
     "url": "https://github.com/sebastianrothe/wp-datepicker-jquery/issues"
   },
   "homepage": "https://github.com/sebastianrothe/wp-datepicker-jquery#readme",
+  "source": "src/index.js",
   "scripts": {
-    "start": "parcel",
+    "start": "parcel serve public/bundle.custom.html public/data/data.txt --open",
     "test": "web-test-runner \"src/**/*.test.js\" --node-resolve --watch",
     "test:ci": "web-test-runner \"src/**/*.test.js\" --node-resolve --coverage",
-    "clean": "rm -rf build/** && rm -rf dist/**",
-    "copy": "./scripts/copy.sh $npm_package_version build",
-    "build": "parcel build",
+    "clean": "rm -rf dist/**",
+    "copy": "./scripts/copy.sh $npm_package_version dist",
+    "build": "parcel build public/bundle.custom.html --no-content-hash --detailed-report",
     "release:prepare": "run-s clean build copy",
     "postversion": "run-s prepare",
     "plugin": "./scripts/build.sh $npm_package_version",
@@ -35,8 +35,10 @@
   },
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4",
+    "@parcel/compressor-brotli": "^2.0.1",
+    "@parcel/compressor-gzip": "^2.0.1",
+    "@parcel/config-default": "^2.0.1",
     "@web/test-runner": "^0.13.22",
-    "cssnano": "^5.0.11",
     "eslint": "<8",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",

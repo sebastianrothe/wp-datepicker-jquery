@@ -13,7 +13,8 @@ ready(() => {
   app.render()
 })
 
-// Hot Module Replacement https://www.snowpack.dev/concepts/hot-module-replacement
-if (import.meta.hot) {
-  import.meta.hot.accept()
+// Hot Module Replacement
+// see https://parceljs.org/features/development/#hot-reloading
+if (module.hot) {
+  module.hot.accept()
 }
