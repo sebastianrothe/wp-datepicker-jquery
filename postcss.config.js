@@ -7,11 +7,11 @@ const presetEnv = require("postcss-preset-env")({
 })
 const stylelint = require("stylelint")
 
-const globalPlugins = [stylelint, presetEnv, reporter]
+const globalPlugins = [stylelint, presetEnv]
 
 const plugins =
   process.env.NODE_ENV === "production"
-    ? [...globalPlugins, cssnano]
+    ? [...globalPlugins, cssnano, reporter]
     : globalPlugins
 
 module.exports = { plugins }
