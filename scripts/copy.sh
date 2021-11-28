@@ -12,8 +12,8 @@ copyAndRename() {
   # copy and rename compiled files
   ls -1 $BUNDLE_PATH/dist/index.$filetype | sed "p;s%$BUNDLE_PATH/dist/\index\.$filetype$%$OUTPUT_PATH/$folder/$NAME-$VERSION\.$filetype%g" | xargs -n2 cp
 
-  # copy and rename jquery-custom files
-  ls -1 $BUNDLE_PATH/js/jquery-ui-$JQUERYUI_VERSION/jquery-ui.*.$filetype | sed "p;s%$BUNDLE_PATH/js/jquery-ui-$JQUERYUI_VERSION/jquery-ui\..*\.$filetype$%$OUTPUT_PATH/$folder/jquery-ui-custom.min\.$filetype%g" | xargs -n2 cp
+  # copy jquery-ui.min.* files and rename to jquery-ui-custom.min.*
+  ls -1 $BUNDLE_PATH/js/jquery-ui-$JQUERYUI_VERSION/jquery-ui.min.$filetype | sed "p;s%$BUNDLE_PATH/js/jquery-ui-$JQUERYUI_VERSION/jquery-ui\..*\.$filetype$%$OUTPUT_PATH/$folder/jquery-ui-custom.min\.$filetype%g" | xargs -n2 cp
 }
 
 copyAndRenameWithCompression() {
