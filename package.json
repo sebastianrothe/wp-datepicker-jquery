@@ -1,6 +1,6 @@
 {
   "name": "datepicker-jqueryui",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A Datepicker in JQuery UI with disabled dates and formatting",
   "main": "src/index.js",
   "repository": {
@@ -39,7 +39,7 @@
     "@snowpack/plugin-postcss": "^1.4.3",
     "@snowpack/web-test-runner-plugin": "^0.2.2",
     "@web/test-runner": "^0.13.22",
-    "cssnano": "^5.0.11",
+    "cssnano": "^5.0.12",
     "eslint": "<8",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
@@ -47,7 +47,7 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-promise": "^5.1.1",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.3",
+    "postcss": "^8.4.4",
     "postcss-cli": "^9.0.2",
     "postcss-fail-on-warn": "^0.2.1",
     "postcss-preset-env": "^7.0.1",
