@@ -23,5 +23,8 @@
     "plugin:import/warnings",
     "plugin:promise/recommended",
     "prettier"
-  ]
+  ],
+  "globals": {
+    "__SNOWPACK_ENV__": "readonly"
+  }
 }
