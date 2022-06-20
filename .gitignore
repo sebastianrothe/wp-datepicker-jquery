@@ -64,6 +64,7 @@ dist
 build
 bundle
 .parcel-cache
+.stylelintcache
 
 # next.js build output
 .next

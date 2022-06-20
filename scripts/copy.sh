@@ -1,6 +1,6 @@
 #!/bin/sh
 VERSION=${1:-develop}
-JQUERYUI_VERSION="1.13.0.custom-smoothness"
+JQUERYUI_VERSION="1.13.1.custom-smoothness"
 NAME=datepicker-jqueryui-plugin
 OUTPUT_PATH="$NAME/public"
 BUNDLE_PATH=${2:-build}
