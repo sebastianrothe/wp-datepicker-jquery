@@ -1,8 +1,8 @@
 // Snowpack Configuration File
 // See all supported options: https://www.snowpack.dev/reference/configuration
 
-// see https://github.com/terser/terser#compress-options
-const ecmaVersion = "es2020"
+// CAUTION: needs to be "es2018", because import.meta needs to be transformed for non-ESM build
+const ecmaVersion = "es2018"
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
@@ -13,27 +13,11 @@ module.exports = {
   buildOptions: {
     minify: false,
   },
-  plugins: [
-    "@snowpack/plugin-dotenv",
-    "@snowpack/plugin-postcss",
-    [
-      "snowpack-plugin-terser",
-      {
-        terserOptions: {
-          compress: {
-            ecma: ecmaVersion,
-          },
-          format: {
-            ecma: ecmaVersion,
-          },
-        },
-      },
-    ],
-  ],
+  plugins: ["@snowpack/plugin-dotenv", "@snowpack/plugin-postcss"],
   optimize: {
     entrypoints: ["src/index.js"],
     bundle: true,
-    minify: false, // minification is done by terser
+    minify: true,
     treeshake: true,
     target: ecmaVersion,
   },
