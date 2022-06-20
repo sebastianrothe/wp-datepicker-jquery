@@ -2,7 +2,7 @@
 // See all supported options: https://www.snowpack.dev/reference/configuration
 
 // see https://github.com/terser/terser#compress-options
-const ecmaVersion = "es2018"
+const ecmaVersion = "es2020"
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
