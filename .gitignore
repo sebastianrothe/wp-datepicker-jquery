@@ -63,6 +63,7 @@ typings/
 dist
 build
 bundle
+.parcel-cache
 
 # next.js build output
 .next
