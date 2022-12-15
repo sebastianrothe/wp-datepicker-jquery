@@ -14,7 +14,7 @@ A Datepicker with support for disabling dates. Implemented with JQuery UI and su
 
 ## TODO
 
-- [ ] use parcel/vite instead of snowpack (supports swc, brotli)
+- [ ] use parcel2/vite instead of snowpack (supports swc, brotli)
 - [ ] replace jqueryui with lit-html/svelte/flatpickr
 - [ ] replace floats with flexbox
 - [ ] add noscript text
